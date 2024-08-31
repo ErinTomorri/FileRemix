@@ -30,7 +30,7 @@ const Pricing: FC = () => {
     {
       name: "Basic",
       price: "$0",
-      features: ["5 conversions/day", "Basic file formats", "2GB max file size"],
+      features: ["unlimited conversions/day", "Basic file formats", "5mb max file size"],
     },
     {
       name: "Pro",
