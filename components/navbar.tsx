@@ -33,7 +33,6 @@ export default function Navbar() {
           <button onClick={() => scrollToSection('pricing-section')} className="text-foreground hover:text-primary transition-colors">Pricing</button>
           <Link href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
           <ModeToggle />
-          <Button>Sign Up</Button>
         </div>
         <div className="md:hidden flex items-center">
           <ModeToggle />
@@ -48,7 +47,6 @@ export default function Navbar() {
                 <button onClick={() => scrollToSection('features-section')} className="text-foreground hover:text-primary transition-colors">Features</button>
                 <button onClick={() => scrollToSection('pricing-section')} className="text-foreground hover:text-primary transition-colors">Pricing</button>
                 <Link href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-                <Button>Sign Up</Button>
               </div>
             </SheetContent>
           </Sheet>

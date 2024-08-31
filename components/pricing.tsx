@@ -6,10 +6,11 @@ interface PlanProps {
   price: string;
   features: string[];
   recommended?: boolean;
+  available?: boolean;
 }
 
-const Plan: FC<PlanProps> = ({ name, price, features, recommended }) => (
-  <div className={`bg-card p-8 rounded-lg shadow-lg ${recommended ? 'border-2 border-primary' : ''}`}>
+const Plan: FC<PlanProps> = ({ name, price, features, recommended, available = true }) => (
+  <div className={`bg-card p-8 rounded-lg shadow-lg ${recommended ? 'border-2 border-primary' : ''} ${!available ? 'opacity-50 cursor-not-allowed' : ''}`}>
     {recommended && <span className="bg-primary text-primary-foreground px-2 py-1 rounded text-sm mb-4 inline-block">Recommended</span>}
     <h3 className="text-2xl font-bold mb-4">{name}</h3>
     <p className="text-3xl font-bold mb-6">{price}<span className="text-lg font-normal text-muted-foreground">/month</span></p>
@@ -21,7 +22,9 @@ const Plan: FC<PlanProps> = ({ name, price, features, recommended }) => (
         </li>
       ))}
     </ul>
-    <Button className="w-full" variant={recommended ? 'default' : 'outline'}>Choose Plan</Button>
+    <Button className="w-full" variant={recommended ? 'default' : 'outline'} disabled={!available}>
+      {available ? 'Choose Plan' : 'Coming Soon'}
+    </Button>
   </div>
 );
 
@@ -30,18 +33,21 @@ const Pricing: FC = () => {
     {
       name: "Basic",
       price: "$0",
-      features: ["unlimited conversions/day", "Basic file formats", "5mb max file size"],
+      features: ["5 conversions/day", "Basic file formats", "2GB max file size"],
+      available: true,
     },
     {
       name: "Pro",
       price: "$9.99",
       features: ["Unlimited conversions", "All file formats", "10GB max file size", "Priority support"],
       recommended: true,
+      available: false,
     },
     {
       name: "Enterprise",
       price: "Custom",
       features: ["Custom solutions", "API access", "Dedicated support", "SLA"],
+      available: false,
     },
   ];
 
