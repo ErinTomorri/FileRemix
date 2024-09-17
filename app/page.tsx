@@ -17,10 +17,10 @@ export default function Home() {
             File<span className="bg-gradient-to-r from-primary to-orange-500 text-transparent bg-clip-text">Remix</span>
           </h1>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Transform Your Files with AI
+            Transform Your Files Instantly 
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
-            Convert, compress, and enhance your files instantly. Powered by advanced AI technology.
+            Convert, compress, and enhance your files instantly.
           </p>
           <HeaderButtons />
         </div>
